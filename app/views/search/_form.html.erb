@@ -1,0 +1,8 @@
+<div class="col-md-12">
+  <%= form_tag search_query_path, method: :get, id: 'search_form', 'data-url': search_query_path(format: :json) do |f| %>
+    <div class="input-group">
+      <%= text_field_tag :query, params[:query], placeholder: "Search", id: "query", class: "form-control" %>
+      <%= button_tag "Search", name: nil, class: "input-group-append btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
