@@ -1,0 +1,13 @@
+<h2>Search Lang Data</h2>
+
+<%= render 'form' %>
+
+<ul>
+  <% @results.each do |row| %>
+    <li>
+      <h4><%= row['Name'] %></h4>
+      <p>Type: <%= row['Type'] %></p>
+      <p>Designed by: <%=row['Designed by'] %></p>
+    </li>
+  <% end %>
+</ul>
