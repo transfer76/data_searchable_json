@@ -5,9 +5,13 @@
 <ul>
   <% @results.each do |row| %>
     <li>
-      <h4><%= row['Name'] %></h4>
-      <p>Type: <%= row['Type'] %></p>
-      <p>Designed by: <%=row['Designed by'] %></p>
+      <p><b>Lang Name:</b> <%= row['Name'] %></p>
+    </li>
+    <li>
+      <p><b>Type:</b> <%= row['Type'] %></p>
+    </li>
+    <li>
+      <p><b>Designed by:</b> <%=row['Designed by'] %></p>
     </li>
   <% end %>
 </ul>
