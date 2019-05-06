@@ -26,7 +26,7 @@ module Search::Methods::Find
   end
 
   def extract_anti_words(words)
-    antiwords, words = word.partition { |word| antiword?(word) }
+    antiwords, words = words.partition { |word| antiword?(word) }
     antiwords = antiwords.map { |s| s.delete('-') }
     [words, antiwords]
   end
