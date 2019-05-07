@@ -17,22 +17,22 @@ module Search::Methods::Find
   end
 
   def parse_query(query)
-    words = query.strip
+    words = query.strip  # delete all white spaces
                  .downcase
-                 .split(/\s+(?=(?:[^"]*"[^"]*")*[^"]*$)/)
-                 .map { |s| s.delete('"') }
+                 .split(/\s+(?=(?:[^"]*"[^"]*")*[^"]*$)/) # split by any whitespace character
+                 .map { |s| s.delete('"') }               # delete all symbols "
     words, antiwords = extract_anti_words(words)
     [words, antiwords]
   end
 
   def extract_anti_words(words)
-    antiwords, words = words.partition { |word| antiword?(word) }
-    antiwords = antiwords.map { |s| s.delete('-') }
+    antiwords, words = words.partition { |word| antiword?(word) }  #create two arrays
+    antiwords = antiwords.map { |s| s.delete('-') }      #delete all symbols -
     [words, antiwords]
   end
 
   def antiword?(word)
-    word =~ /\A\-+/
+    word =~ /\A\-+/   # find count of - symbol
   end
 
   def search(words)
@@ -42,6 +42,6 @@ module Search::Methods::Find
       results.add(ids) if ids
     end
 
-    results.reduce(&:&)
+    results.reduce(&:&)  # search match precision
   end
 end
