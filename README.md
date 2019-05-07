@@ -1,5 +1,14 @@
-## Bare minimum requirements:
+## Data_Searchable
 
+This is simple Web API for searching language data. It`s implemented in Ruby using RoR.
+
+**Ruby** 2.5.3
+
+**RoR**  5.2.3
+
+Task completed as test
+
+#### Bare minimum requirements:
     Implementation must use Ruby on Rails, JavaScript and HTML (all three)
     Search logic should be implemented in Ruby and written by YOU, don't use a gem or external code for this
     Use Ruby 2.5.х, Rails 5.х, Trailblazer 2.х
@@ -13,10 +22,30 @@
     Solution elegance
     Visual design
     
-## Keep in mind:
-    
+#### Keep in mind:
     Frameworks are allowed (Rails, of course, is needed), but not required.
     Comments are VERY useful, they help us understand your thought process
     This exercise is not meant to take more than 6 - 8 hours
     A readme file is highly encouraged
     It's preferable if you don't use a database for this small data set, instead read the JSON file
+    
+#### To Start
+Download or clone repository
+
+Use bundle
+
+```
+$ bundle install
+```
+
+Start server
+
+```
+$ rails s
+```
+
+Open browser with URL
+
+```
+http://localhost:3000
+```
