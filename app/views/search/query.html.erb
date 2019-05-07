@@ -1,17 +1,22 @@
-<h2>Search Lang Data</h2>
+<div class="row mt-4 mb-4 ml-3">
+  <h2>Search Lang Data</h2>
+</div>
 
 <%= render 'form' %>
 
-<ul>
-  <% @results.each do |row| %>
-    <li>
-      <p><b>Lang Name:</b> <%= row['Name'] %></p>
-    </li>
-    <li>
-      <p><b>Type:</b> <%= row['Type'] %></p>
-    </li>
-    <li>
-      <p><b>Designed by:</b> <%=row['Designed by'] %></p>
-    </li>
-  <% end %>
-</ul>
+<div class="row mt-4">
+  <ul>
+    <% @results.each do |row| %>
+      <li>
+        <p><b>Lang Name:</b> <%= row['Name'] %></p>
+      </li>
+      <li>
+        <p><b>Type:</b> <%= row['Type'] %></p>
+      </li>
+      <li>
+        <p><b>Designed by:</b> <%= row['Designed by'] %></p>
+      </li>
+      <p>--------------------------------------------------------------------------------------------------</p>
+    <% end %>
+  </ul>
+</div>
