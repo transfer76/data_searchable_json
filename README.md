@@ -1,6 +1,8 @@
 ## Data_Searchable
 
-This is simple Web API for searching language data. It`s implemented in Ruby using RoR.
+This is simple Web API for searching programming language data. It`s implemented in Ruby using RoR.
+
+User can enter in search bar name of programming language or type of language, or who designed language and get data
 
 **Ruby** 2.5.3
 
