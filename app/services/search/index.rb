@@ -33,8 +33,7 @@ class Search::Index
   end
 
   def make_word_levels(list)
-    list
-        .map { |item| item.split(/\s+/) }
+    list.map { |item| item.split(/\s+/) }
         .map { |item| make_words_combi([], item, 1) }
         .flatten
         .reject(&:nil?)
@@ -42,6 +41,7 @@ class Search::Index
 
   def make_words_combi(set, list, i)
     return if list.count <= 1 || i >= list.count - 1
+
     set << list[0..i].join(' ')
     set << make_words_combi(set, list, i + 1)
     set.flatten
