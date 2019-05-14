@@ -15,4 +15,18 @@ class SearchController < ApplicationController
    def resource
      @resource ||= Search::Resource.new Rails.root.join('db', 'data.json')
    end
+
+   def index
+     form Search::Create
+   end
+
+   def create
+     run Search::Create
+
+     render action: :index
+   end
+
+  def process
+
+  end
 end
