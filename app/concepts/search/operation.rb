@@ -2,6 +2,21 @@ class Search < ActiveRecord::Base
   class Create < Trailblazer::Operation
     def process; end
 
+    def query
+        @query = params[:query]
+        @results = resource.find(@query) unless @query.blank?
+        respond_to do |f|
+          f.html
+          f.json { render json: @results }
+        end
+      end
+
+      private
+
+      def resource
+        @resource ||= Search::Create Rails.root.join('db', 'data.json')
+      end
+
     def initialize(db:)  #db - data.json
       @index = {}
       db.each_with_index do |item, id|
